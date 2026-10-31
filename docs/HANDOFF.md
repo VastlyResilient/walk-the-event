@@ -23,5 +23,7 @@ Six breakdowns map to the real footage at 16.5, 39.5, 48, 64.5, 83 and 91 second
 - No physical-device Safari/Android testing or certified 60fps/4G budget result. Full 60-second continuous walk capture not produced; two ~20-second real promo captures are included.
 - This delivery does not meet every ≥9 art-director gate in the aspirational master prompt. It is a working footage-first web release with documented fallbacks.
 
+Final deployed CPU card: Persistence 2, 2026 by Morry Kolman. Outro displays and official Hermes Desktop link verified.
+
 ## Maintain
 `npm install && npm run dev`; `npm run build -- --base=/walk-the-event/` for deployment. `src/data-gen.ts` holds grounded content and tracks. Public media is in `public/`; original source inputs are gitignored. Add a station by adding card/photo evidence to `data/stations.json`, then updating/regenerating `src/data-gen.ts` and its breakdown timestamp/track. Do not invent facts.
