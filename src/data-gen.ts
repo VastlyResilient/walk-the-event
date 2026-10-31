@@ -270,7 +270,7 @@ export const STATIONS: Station[] = [
  {
   "id": "cpu-terminals",
   "label": "CPU TERMINALS",
-  "title": "",
+  "title": "Persistence 2, 2026",
   "artist": "Morry Kolman",
   "oneLiner": "Two computers. One impossible conversation.",
   "body": "COMPUTER\n\nMorry Kolman\nPersistence 2, 2026\n\nPersistence 2 is a duet performance where two\ncomputers with extremely limited networking\ncapabilities attempt to establish a means of\ncommunicating with each other. Kept separate\nby a hard firewall, banned from any wireless\nconnectivity, and without access to common\nmeans of emitting and receiving information\nsuch as microphones, cameras, speakers, and\nscreens, viewers can watch as these\ncomputers turn to the only means of outreach\nthey have left: their (quite literal) own devices.\nLeveraging agent skills loaded with data\nsmuggling and airgap jumping techniques from\nstate of the art security research, the\ncomputers attempt to turn adversarial\nexfiltration and hacking methods into a new\nmeans of connection. They must emit and they\nmust listen; they must take the arbitrary noise\naround them as potential signal, while also\nunderstanding how their own lossy\ncommunication may be interpreted by their\ncounterpart; they grow new senses so that\nthey may speak a new language.\n\n@WTTDOTM",
