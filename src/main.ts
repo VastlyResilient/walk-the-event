@@ -5,6 +5,7 @@ import { mountMap } from "./map";
 import { mountGallery } from "./gallery";
 import type { Station } from "./data-gen";
 import { LINES, PERSONALITIES, askHermes, type Personality } from "./guide";
+import { mountCharacter, type CharacterRig } from "./character";
 
 const BASE = import.meta.env.BASE_URL;
 const app = document.getElementById("app")!;
@@ -33,7 +34,7 @@ app.innerHTML = `
     </div>
   </div>
   <div id="view" style="position:absolute;inset:0"></div>
-  <div class="guide" id="guide"><img src="${BASE}guide.png" alt="Hermes, your guide"/></div>
+  <div class="guide char-live" id="guide" role="img" aria-label="Hermes, your 3D guide"></div>
   <div class="bubble" id="bubble" style="display:none"></div>
   <div id="captionbar" style="position:fixed;left:50%;bottom:calc(14px + var(--safe-b));transform:translateX(-50%);z-index:36;max-width:min(640px,86vw);text-align:center;font-size:12.5px;color:var(--txt);background:rgba(8,8,13,0.72);border:1px solid var(--line);border-radius:10px;padding:7px 14px;backdrop-filter:blur(8px);display:none"></div>
   <div class="overlay" id="overlay"><button class="icon-btn close-x" id="ov-close">✕</button><div id="ov-body" style="width:100%;display:grid;place-items:center"></div></div>
@@ -65,6 +66,7 @@ app.innerHTML = `
 
 const view = document.getElementById("view")!;
 const guideEl = document.getElementById("guide")!;
+const char: CharacterRig = mountCharacter(guideEl);
 const bubble = document.getElementById("bubble")!;
 const captionbar = document.getElementById("captionbar")!;
 
@@ -205,6 +207,7 @@ let unmount: (() => void) | null = null;
 const ctx: WalkCtx = {
   openStation,
   say,
+  char,
   setPersonality: p => { store.personality = p; },
   getPersonality: () => store.personality,
   captionsOn: () => store.captions,
@@ -228,7 +231,14 @@ function route() {
   const path = cleanPath.endsWith("/map") ? "/map" : cleanPath.endsWith("/stations") ? "/stations" : "/";
   document.querySelectorAll(".nav a[data-route]").forEach(a =>
     a.classList.toggle("active", (a as HTMLElement).dataset.route === path));
-  guideEl.style.display = path === "/stations" ? "none" : "block";
+  const onWalk = path === "/";
+  if (!onWalk) document.getElementById("intro")?.classList.add("gone");
+  guideEl.style.display = onWalk ? "block" : "none";
+  if (!onWalk) {
+    guideEl.style.left = "12px"; guideEl.style.top = "auto";
+    guideEl.style.bottom = "calc(72px + var(--safe-b))";
+    guideEl.style.width = ""; guideEl.style.height = "";
+  }
   if (path === "/map") unmount = mountMap(view, ctx);
   else if (path === "/stations") unmount = mountGallery(view, ctx);
   else unmount = mountWalk(view, ctx);

@@ -12,8 +12,8 @@ export interface Chapter { id: string; title: string; desc: string; t: number; e
 export type Floor = "down" | "up";
 
 export const FLOORS: Record<Floor, { src: string; duration: number; name: string }> = {
-  down: { src: import.meta.env.BASE_URL + "media/downstairs.mp4", duration: 119.1, name: "Downstairs" },
-  up:   { src: import.meta.env.BASE_URL + "media/upstairs.mp4",   duration: 129.6, name: "Upstairs" },
+  down: { src: import.meta.env.BASE_URL + "media/downstairs_blurred.mp4", duration: 119.1, name: "Downstairs" },
+  up:   { src: import.meta.env.BASE_URL + "media/upstairs_blurred.mp4",   duration: 129.6, name: "Upstairs" },
 };
 
 export const STATIONS: Station[] = [
@@ -34,8 +34,8 @@ export const STATIONS: Station[] = [
   "hero": import.meta.env.BASE_URL + "stations/led-camera-screens/IMG_3852.webp",
   "timestamp": 16.5,
   "visibility": [
-   13.5,
-   19.5
+   14.7,
+   18.3
   ],
   "guideLines": [
    "A portrait, borrowed from centuries.",
@@ -43,25 +43,11 @@ export const STATIONS: Station[] = [
   ],
   "track": [
    {
-    "t": 13.5,
-    "x": 0.56,
-    "y": 0.44,
-    "w": 0.52,
-    "h": 0.4
-   },
-   {
     "t": 16.5,
-    "x": 0.42,
-    "y": 0.42,
-    "w": 0.6,
-    "h": 0.46
-   },
-   {
-    "t": 19.5,
-    "x": 0.14,
-    "y": 0.4,
-    "w": 0.5,
-    "h": 0.42
+    "x": 0.16,
+    "y": 0.54,
+    "w": 0.33,
+    "h": 0.72
    }
   ]
  },
@@ -133,8 +119,8 @@ export const STATIONS: Station[] = [
   "hero": import.meta.env.BASE_URL + "stations/projector-screens/IMG_3859.webp",
   "timestamp": 48,
   "visibility": [
-   45,
-   51
+   46.2,
+   49.8
   ],
   "guideLines": [
    "Sound and image, one whole world.",
@@ -142,25 +128,11 @@ export const STATIONS: Station[] = [
   ],
   "track": [
    {
-    "t": 45,
-    "x": 0.56,
-    "y": 0.44,
-    "w": 0.52,
-    "h": 0.4
-   },
-   {
     "t": 48.0,
-    "x": 0.42,
-    "y": 0.42,
-    "w": 0.6,
-    "h": 0.46
-   },
-   {
-    "t": 51,
-    "x": 0.14,
-    "y": 0.4,
-    "w": 0.5,
-    "h": 0.42
+    "x": 0.8,
+    "y": 0.43,
+    "w": 0.26,
+    "h": 0.36
    }
   ]
  },
@@ -184,8 +156,8 @@ export const STATIONS: Station[] = [
   "hero": import.meta.env.BASE_URL + "stations/space-screen/IMG_3842.webp",
   "timestamp": 64.5,
   "visibility": [
-   61.5,
-   67.5
+   62.7,
+   66.3
   ],
   "guideLines": [
    "Every skill leaves an orbit.",
@@ -193,25 +165,11 @@ export const STATIONS: Station[] = [
   ],
   "track": [
    {
-    "t": 61.5,
-    "x": 0.56,
-    "y": 0.44,
-    "w": 0.52,
-    "h": 0.4
-   },
-   {
     "t": 64.5,
-    "x": 0.42,
-    "y": 0.42,
-    "w": 0.6,
-    "h": 0.46
-   },
-   {
-    "t": 67.5,
-    "x": 0.14,
-    "y": 0.4,
-    "w": 0.5,
-    "h": 0.42
+    "x": 0.87,
+    "y": 0.55,
+    "w": 0.26,
+    "h": 0.58
    }
   ]
  },
@@ -236,8 +194,8 @@ export const STATIONS: Station[] = [
   "hero": import.meta.env.BASE_URL + "stations/merch/IMG_3828.webp",
   "timestamp": 83,
   "visibility": [
-   80,
-   86
+   81.2,
+   84.8
   ],
   "guideLines": [
    "The ideas look good on you, too.",
@@ -245,25 +203,11 @@ export const STATIONS: Station[] = [
   ],
   "track": [
    {
-    "t": 80,
-    "x": 0.56,
-    "y": 0.44,
-    "w": 0.52,
-    "h": 0.4
-   },
-   {
     "t": 83.0,
-    "x": 0.42,
-    "y": 0.42,
-    "w": 0.6,
+    "x": 0.15,
+    "y": 0.55,
+    "w": 0.3,
     "h": 0.46
-   },
-   {
-    "t": 86,
-    "x": 0.14,
-    "y": 0.4,
-    "w": 0.5,
-    "h": 0.42
    }
   ]
  },
@@ -284,8 +228,8 @@ export const STATIONS: Station[] = [
   "hero": import.meta.env.BASE_URL + "stations/cpu-terminals/IMG_9270.webp",
   "timestamp": 91,
   "visibility": [
-   88,
-   94
+   89.2,
+   92.8
   ],
   "guideLines": [
    "Two computers. One impossible conversation.",
@@ -293,25 +237,11 @@ export const STATIONS: Station[] = [
   ],
   "track": [
    {
-    "t": 88,
-    "x": 0.56,
-    "y": 0.44,
-    "w": 0.52,
-    "h": 0.4
-   },
-   {
     "t": 91.0,
-    "x": 0.42,
-    "y": 0.42,
-    "w": 0.6,
+    "x": 0.77,
+    "y": 0.57,
+    "w": 0.42,
     "h": 0.46
-   },
-   {
-    "t": 94,
-    "x": 0.14,
-    "y": 0.4,
-    "w": 0.5,
-    "h": 0.42
    }
   ]
  }

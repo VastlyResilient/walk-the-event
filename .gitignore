@@ -4,3 +4,7 @@ dist/
 docs/*.log
 input/
 data/frames_*/
+qa/
+models/
+data/faces_*.json
+data/match2/

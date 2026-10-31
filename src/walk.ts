@@ -1,6 +1,8 @@
 
 import { STATIONS, CHAPTERS, FLOORS, type Floor, type Station, type Chapter } from "./data-gen";
 import { LINES, type Personality } from "./guide";
+import type { CharacterRig } from "./character";
+import { stationShape } from "./stationshapes";
 
 export interface WalkCtx {
   openStation(st: Station, returnTime: number): void;
@@ -13,6 +15,7 @@ export interface WalkCtx {
   applyAudio(video: HTMLVideoElement): void;
   reducedMotion(): boolean;
   go(path: string, hash?: string): void;
+  char: CharacterRig;
 }
 
 const VIDEO_AR = 1080 / 1920;
@@ -48,6 +51,60 @@ export function mountWalk(root: HTMLElement, ctx: WalkCtx): () => void {
   const railFill = root.querySelector<HTMLDivElement>("#railfill")!;
   const hint = root.querySelector<HTMLDivElement>("#hint")!;
   const floorSw = root.querySelector<HTMLDivElement>("#floorsw")!;
+  const guideEl = document.getElementById("guide") as HTMLDivElement | null;
+
+  // ---- venue-matched character lighting ----
+  const lightCanvas = document.createElement("canvas");
+  lightCanvas.width = 24; lightCanvas.height = 36;
+  const lctx = lightCanvas.getContext("2d", { willReadFrequently: true });
+  let lastLightSample = 0;
+  function sampleVenueLight(now: number) {
+    if (!lctx || now - lastLightSample < 420 || video.readyState < 2) return;
+    lastLightSample = now;
+    try {
+      lctx.drawImage(video, 0, 0, lightCanvas.width, lightCanvas.height);
+      const W = lightCanvas.width, H = lightCanvas.height;
+      const d = lctx.getImageData(0, 0, W, H).data;
+      const avg = (x0: number, x1: number, y0: number, y1: number) => {
+        let r = 0, g = 0, b = 0, w = 0;
+        for (let y = y0; y < y1; y++) for (let x = x0; x < x1; x++) {
+          const i = (y * W + x) * 4;
+          const rr = d[i], gg = d[i + 1], bb = d[i + 2];
+          const luma = .2126 * rr + .7152 * gg + .0722 * bb;
+          if (luma < 14) continue;
+          const wt = Math.min(1, luma / 120);
+          r += rr * wt; g += gg * wt; b += bb * wt; w += wt;
+        }
+        return w > 2 ? { r: Math.min(1, (r / w) / 150), g: Math.min(1, (g / w) / 150), b: Math.min(1, (b / w) / 150), w } : null;
+      };
+      // key light from the wall/screen field in front of her
+      const k = avg(0, W, Math.floor(H * .40), Math.floor(H * .76));
+      if (k) {
+        const luma = (.2126 * k.r + .7152 * k.g + .0722 * k.b);
+        ctx.char.setLight([k.r, k.g, k.b], Math.min(1, .35 + luma));
+      }
+      // actual floor under her left-side footprint, bottom of frame
+      const f = avg(0, Math.floor(W * .42), Math.floor(H * .84), H);
+      if (f) {
+        const fl = (.2126 * f.r + .7152 * f.g + .0722 * f.b);
+        ctx.char.setGround([f.r, f.g, f.b], Math.min(1, fl));
+      }
+    } catch { /* same-origin video; ignore transient taint */ }
+  }
+
+  function placeGuide(r: {x:number;y:number;w:number;h:number}) {
+    if (!guideEl) return;
+    const landscape = vframe.classList.contains("landscape");
+    const gw = Math.max(104, Math.min(198, r.h * (landscape ? .205 : .31)));
+    const gh = gw * 1.92;
+    const floorY = r.y + r.h * (landscape ? .885 : .935);
+    guideEl.style.position = "fixed";
+    guideEl.style.left = `${Math.max(4, r.x + r.w * (landscape ? .085 : .04))}px`;
+    guideEl.style.top = `${floorY - gh}px`;
+    guideEl.style.bottom = "auto";
+    guideEl.style.width = `${gw}px`;
+    guideEl.style.height = `${gh}px`;
+  }
 
   const state = {
     floor: "down" as Floor,
@@ -66,7 +123,7 @@ export function mountWalk(root: HTMLElement, ctx: WalkCtx): () => void {
   for (const st of STATIONS) {
     const el = document.createElement("div");
     el.className = "hotspot off";
-    el.innerHTML = `<span class="tag">${st.label} · tap</span>`;
+    el.innerHTML = `${stationShape(st.id, st.label)}<span class="tag">${st.label} · tap the outline</span>`;
     el.addEventListener("click", () => ctx.openStation(st, state.cur));
     hsBox.appendChild(el);
     hsEls.set(st.id, el);
@@ -134,7 +191,10 @@ export function mountWalk(root: HTMLElement, ctx: WalkCtx): () => void {
   function seekTo(t: number) {
     state.target = Math.max(0, Math.min(FLOORS[state.floor].duration - 0.1, t));
     state.cur = state.target; // jump cut for explicit navigation
-    video.currentTime = state.cur;
+    // A deep link can arrive before the video has metadata. Applying currentTime
+    // too early is silently discarded, leaving the walk at 0:00.
+    if (video.readyState >= 1) video.currentTime = state.cur;
+    else video.addEventListener("loadedmetadata", () => { video.currentTime = state.cur; }, { once: true });
     state.lastMove = performance.now();
   }
 
@@ -221,7 +281,7 @@ export function mountWalk(root: HTMLElement, ctx: WalkCtx): () => void {
     // parallax easing
     state.panX += (state.panTX - state.panX) * 0.1;
     state.panY += (state.panTY - state.panY) * 0.1;
-    vframe.style.transform = `rotateY(${state.panX * 0.12}deg) rotateX(${-state.panY * 0.12}deg) translate(${state.panX}px, ${state.panY}px)`;
+    vframe.style.transform = "none"; // keep video geometry fixed: overlays are positioned from contentRect and must not drift
 
     // timecode + progress
     const dur = FLOORS[state.floor].duration;
@@ -249,7 +309,7 @@ export function mountWalk(root: HTMLElement, ctx: WalkCtx): () => void {
     for (const st of STATIONS) {
       const el = hsEls.get(st.id)!;
       const [a, b] = st.visibility;
-      const visible = state.floor === "down" && state.cur >= a - 0.5 && state.cur <= b + 0.5;
+      const visible = st.id !== "tvs" && state.floor === "down" && state.cur >= a - 0.5 && state.cur <= b + 0.5;
       if (!visible) { el.classList.add("off"); el.style.opacity = "0"; continue; }
       const k = trackAt(st, state.cur);
       el.style.left = `${r.x + k.x * r.w - (k.w * r.w) / 2}px`;
@@ -274,8 +334,10 @@ export function mountWalk(root: HTMLElement, ctx: WalkCtx): () => void {
       lastFwdLine = performance.now();
       ctx.say(pick(LINES.forward[Math.floor(Math.random() * LINES.forward.length)]));
     }
-    // guide walking state
-    document.getElementById("guide")?.classList.toggle("walking", Math.abs(diff) > 0.15);
+    // grounded character: walks with the scroll, stands on the venue floor
+    placeGuide(r);
+    ctx.char.setMoving(Math.min(1, Math.abs(diff) * 2.6));
+    sampleVenueLight(performance.now());
 
     // outro at very end of upstairs
     if (state.floor === "up" && state.cur >= dur - 0.3) {
