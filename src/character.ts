@@ -257,8 +257,8 @@ export function mountCharacter(host: HTMLElement): CharacterRig {
     g.fillStyle = grd; g.fillRect(0, 0, 128, 128);
     const t = new THREE.CanvasTexture(c); t.colorSpace = THREE.SRGBColorSpace; return t;
   }
-  const shadowMat = new THREE.MeshBasicMaterial({ map: shadowTex(.55), transparent: true, depthWrite: false, color: 0x1b1424, blending: THREE.NormalBlending });
-  const shadow = new THREE.Mesh(new THREE.PlaneGeometry(.56, .31), shadowMat);
+  const shadowMat = new THREE.MeshBasicMaterial({ map: shadowTex(.85), transparent: true, depthWrite: false, color: 0x1b1424, blending: THREE.NormalBlending });
+  const shadow = new THREE.Mesh(new THREE.PlaneGeometry(.68, .38), shadowMat);
   shadow.rotation.x = -Math.PI / 2; shadow.position.y = .006; root.add(shadow);
   const glowMat = new THREE.MeshBasicMaterial({ map: shadowTex(.24), transparent: true, depthWrite: false, color: 0xffb7d5, blending: THREE.AdditiveBlending });
   const glow = new THREE.Mesh(new THREE.PlaneGeometry(.90, .48), glowMat);
@@ -319,7 +319,7 @@ export function mountCharacter(host: HTMLElement): CharacterRig {
     chest.scale.y = .58 + Math.sin(now * .0016) * .006;
     // shadow reacts to step
     shadow.scale.setScalar(1 + Math.abs(sw) * .06 * moving);
-    shadowMat.opacity = .74 - Math.abs(sw) * .06 * moving;
+    shadowMat.opacity = .90 - Math.abs(sw) * .06 * moving;
     glowMat.opacity = .34 + Math.abs(sw) * .07 * moving;
     // dynamic venue light
     key.color.lerp(keyColor, Math.min(1, dt * 2));
@@ -336,7 +336,7 @@ export function mountCharacter(host: HTMLElement): CharacterRig {
     setGround(rgb, strength) {
       groundColor.setRGB(rgb[0], rgb[1], rgb[2]);
       shadowMat.color.copy(groundColor).multiplyScalar(.12);
-      shadowMat.opacity = .48 + strength * .28;
+      shadowMat.opacity = Math.min(.94, .64 + strength * .30);
       glowMat.color.copy(groundColor).lerp(keyColor, .22);
     },
     setLight(rgb, brightness) {

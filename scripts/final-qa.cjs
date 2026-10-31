@@ -1,5 +1,5 @@
 const {chromium}=require('playwright');
-const B='http://127.0.0.1:4182/walk-the-event/';
+const B=process.env.B||'http://127.0.0.1:4182/walk-the-event/';
 (async()=>{
  const b=await chromium.launch();
  const errors=[];
