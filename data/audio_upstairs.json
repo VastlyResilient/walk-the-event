@@ -1,0 +1,5 @@
+{
+  "speech": "",
+  "analysis": "No reliable speech transcription; predominantly music/ambience. Whisper produced a repeated non-English hallucination and it is discarded.",
+  "music_ambience": true
+}

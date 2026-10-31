@@ -1,0 +1,56 @@
+[
+  {
+    "file": "input/breakdown/BREAKDOWNS/IMG_9284.jpeg",
+    "exact_label": "LED CAMERA SCREENS",
+    "matched_station_folder": "input/stations/led camera screens",
+    "annotation": "Thick white hand-drawn circle around the first few screens on the left; black capital-letter text overlay.",
+    "visual_description": "Long hallway/gallery saturated in magenta-purple light. On the left, a row of tall vertical screens on individual dark stands recedes into the distance; the circled closest screen shows a captured image of a person inside a white frame. Cables on the floor near the base. White ceiling with recessed warm pink lights and dark linear tracks. Right side open with large windows onto darkness; silhouetted attendees mingling; a table lit red/blue far down on the right.",
+    "match_confidence": "high",
+    "match_reason": "Label exactly matches folder name (case-insensitive); the led camera screens photos (IMG_3851) show the same row of vertical framed screens on stands."
+  },
+  {
+    "file": "input/breakdown/BREAKDOWNS/IMG_9285.jpeg",
+    "exact_label": "SPACE SCREEN",
+    "matched_station_folder": "input/stations/SPACE SCREEN",
+    "annotation": "Black 'SPACE SCREEN' text overlay upper-middle; thick white hand-drawn circle around a group of people on the right gathered around a display point.",
+    "visual_description": "Indoor hall bathed in cool blue ambient light (black video bars top/bottom). Two young women walk toward camera in foreground. Crowd in mid/background; light-toned reflective floor; recessed white ceiling lights upper left; staircase-like structure faint far-left. Circled group faces a common display/interactive screen point.",
+    "match_confidence": "high",
+    "match_reason": "Label exactly matches folder name; SPACE SCREEN photos show the large 'HERMES JOURNEY' touch display on a stand that the circled crowd is gathered around."
+  },
+  {
+    "file": "input/breakdown/BREAKDOWNS/IMG_9286.jpeg",
+    "exact_label": "MERCH",
+    "matched_station_folder": "input/stations/MERCH",
+    "annotation": "Large black 'MERCH' text upper left; white hand-drawn outline around a station on the far left.",
+    "visual_description": "Open event space in cool blue light; light tiled floor, high white ceiling with black track spotlights, bare light walls. Highlighted station: a dark table with folded light-colored garments, a dark-haired woman behind it handling an item; items displayed on the wall behind. Numerous attendees mingling; large windows/glass panels in background.",
+    "match_confidence": "high",
+    "match_reason": "Label exactly matches folder name; MERCH photos show t-shirts hung on a wall and the merch display under the same blue light."
+  },
+  {
+    "file": "input/breakdown/BREAKDOWNS/IMG_9287.jpeg",
+    "exact_label": "CPU\nTERMINALS",
+    "matched_station_folder": "input/stations/CPU TERMINALS",
+    "annotation": "'CPU TERMINALS' text overlay (two lines); highlight circle around one of the white pedestal stations.",
+    "visual_description": "Indoor event space at night with bluish-purple mood lighting on ceiling/upper walls; large windows with city lights outside. White blocky pedestal tables along the window wall each hold computer monitors showing light-text-on-dark terminal/code interfaces; highlighted station clearly shows two monitors. Attendees standing and conversing around the stations.",
+    "match_confidence": "high",
+    "match_reason": "Label matches folder name; CPU TERMINALS photos show the same pedestal terminal setup (IMG_3827 wall text 'COMPUTER', IMG_9270 monitor running a Hermes terminal session)."
+  },
+  {
+    "file": "input/breakdown/BREAKDOWNS/IMG_9288.jpeg",
+    "exact_label": "Projector Screens",
+    "matched_station_folder": "input/stations/Projector Screens",
+    "annotation": "'Projector Screens' label; circle around a large projection on a white wall. NOTE: this is a phone screenshot of the Photos/video player UI (time 3:40, 'Yesterday 8:58 PM', share/heart/info/trash icons, playback bar, thumbnail strip).",
+    "visual_description": "Long wide hallway, white marble/polished floor, white walls bathed in blue-purple ambient light. Circled station: a large bright vertical projection on the right-hand white wall displaying a digital interface/artwork with '000' visible; two people standing in front of it (one in dark clothing hair tied up; one in dark hoodie + blue cap holding a drink). Track lighting on ceiling; seating and more attendees further back.",
+    "match_confidence": "high",
+    "match_reason": "Label exactly matches folder name; Projector Screens photos (IMG_3859/3860) show the same large projected glyph/art wall under purple light."
+  },
+  {
+    "file": "input/breakdown/BREAKDOWNS/IMG_9290.jpeg",
+    "exact_label": "TVs",
+    "matched_station_folder": "input/stations/TVS",
+    "annotation": "'TVs' label; white arrow (video UI element top right) / annotation pointing left toward the screen group on the left side.",
+    "visual_description": "Contemporary multi-level event space in purple/blue LED light; light polished floor. Left side: group of people gathered at a wall-mounted display area (the TVs). Foreground: person with long dark hair, dark top and shorts, walking away on a walkway beside a white railing overlooking a lower level with warmer light. High white ceiling with track lights; more attendees near large windows behind.",
+    "match_confidence": "high",
+    "match_reason": "Label matches folder name (TVS vs 'TVs'); TVS photos show the 2x3 wall-mounted monitor grid, matching a wall of screens people gather at."
+  }
+]

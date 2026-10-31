@@ -1,0 +1,38 @@
+[
+  {
+    "start": 0,
+    "end": 12,
+    "title": "Into the pink",
+    "description": "A white corridor washed in magenta, gathering crowds."
+  },
+  {
+    "start": 12,
+    "end": 30,
+    "title": "Faces in the frames",
+    "description": "Interactive portrait screens lead toward the NOUSCON crowd."
+  },
+  {
+    "start": 30,
+    "end": 48,
+    "title": "Around the curve",
+    "description": "An elevated walk beside a white rail, then wall-mounted displays and projection."
+  },
+  {
+    "start": 48,
+    "end": 72,
+    "title": "Worlds within worlds",
+    "description": "Generative audiovisual art, an open gallery, and Hermes Journey."
+  },
+  {
+    "start": 72,
+    "end": 100,
+    "title": "Ideas, made tangible",
+    "description": "Merchandise and isolated computer terminals."
+  },
+  {
+    "start": 100,
+    "end": 119.1,
+    "title": "Afterglow",
+    "description": "A dark red-lit passage opens into the final gallery."
+  }
+]

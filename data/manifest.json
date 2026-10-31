@@ -1,0 +1,256 @@
+[
+  {
+    "path": "input/videos/upstairs.mp4",
+    "bytes": 110172504,
+    "type": "mp4"
+  },
+  {
+    "path": "input/videos/downstairs.mp4",
+    "bytes": 112080916,
+    "type": "mp4"
+  },
+  {
+    "path": "input/stations/Projector Screens/IMG_3859.jpeg",
+    "bytes": 4382922,
+    "type": "jpeg",
+    "dimensions": [
+      5712,
+      4284
+    ]
+  },
+  {
+    "path": "input/stations/Projector Screens/IMG_3862.jpeg",
+    "bytes": 2194111,
+    "type": "jpeg",
+    "dimensions": [
+      4032,
+      3024
+    ]
+  },
+  {
+    "path": "input/stations/Projector Screens/IMG_3861.MOV",
+    "bytes": 7744391,
+    "type": "mov"
+  },
+  {
+    "path": "input/stations/Projector Screens/IMG_3860.jpeg",
+    "bytes": 4772927,
+    "type": "jpeg",
+    "dimensions": [
+      5712,
+      4284
+    ]
+  },
+  {
+    "path": "input/stations/led camera screens/IMG_3852.jpeg",
+    "bytes": 3804965,
+    "type": "jpeg",
+    "dimensions": [
+      5712,
+      4284
+    ]
+  },
+  {
+    "path": "input/stations/led camera screens/IMG_3851.jpeg",
+    "bytes": 993086,
+    "type": "jpeg",
+    "dimensions": [
+      4032,
+      3024
+    ]
+  },
+  {
+    "path": "input/stations/TVS/IMG_3855.jpeg",
+    "bytes": 5325463,
+    "type": "jpeg",
+    "dimensions": [
+      5712,
+      4284
+    ]
+  },
+  {
+    "path": "input/stations/TVS/IMG_3858.jpeg",
+    "bytes": 5368424,
+    "type": "jpeg",
+    "dimensions": [
+      5712,
+      4284
+    ]
+  },
+  {
+    "path": "input/stations/TVS/IMG_3857.jpeg",
+    "bytes": 5269288,
+    "type": "jpeg",
+    "dimensions": [
+      5712,
+      4284
+    ]
+  },
+  {
+    "path": "input/stations/TVS/IMG_3856.jpeg",
+    "bytes": 5539082,
+    "type": "jpeg",
+    "dimensions": [
+      5712,
+      4284
+    ]
+  },
+  {
+    "path": "input/stations/SPACE SCREEN/IMG_3843.jpeg",
+    "bytes": 4537372,
+    "type": "jpeg",
+    "dimensions": [
+      5712,
+      4284
+    ]
+  },
+  {
+    "path": "input/stations/SPACE SCREEN/IMG_3842.jpeg",
+    "bytes": 4168221,
+    "type": "jpeg",
+    "dimensions": [
+      5712,
+      4284
+    ]
+  },
+  {
+    "path": "input/stations/SPACE SCREEN/IMG_3845.jpeg",
+    "bytes": 4037535,
+    "type": "jpeg",
+    "dimensions": [
+      5712,
+      4284
+    ]
+  },
+  {
+    "path": "input/stations/SPACE SCREEN/IMG_3846.MOV",
+    "bytes": 10777144,
+    "type": "mov"
+  },
+  {
+    "path": "input/stations/SPACE SCREEN/IMG_3844.jpeg",
+    "bytes": 4137239,
+    "type": "jpeg",
+    "dimensions": [
+      5712,
+      4284
+    ]
+  },
+  {
+    "path": "input/stations/CPU TERMINALS/IMG_3827.jpeg",
+    "bytes": 4279110,
+    "type": "jpeg",
+    "dimensions": [
+      5712,
+      4284
+    ]
+  },
+  {
+    "path": "input/stations/CPU TERMINALS/IMG_9270.jpeg",
+    "bytes": 483727,
+    "type": "jpeg",
+    "dimensions": [
+      1320,
+      2868
+    ]
+  },
+  {
+    "path": "input/stations/MERCH/IMG_3834.jpeg",
+    "bytes": 3073023,
+    "type": "jpeg",
+    "dimensions": [
+      5712,
+      4284
+    ]
+  },
+  {
+    "path": "input/stations/MERCH/IMG_3838.jpeg",
+    "bytes": 2511959,
+    "type": "jpeg",
+    "dimensions": [
+      5712,
+      4284
+    ]
+  },
+  {
+    "path": "input/stations/MERCH/IMG_3835.jpeg",
+    "bytes": 3659963,
+    "type": "jpeg",
+    "dimensions": [
+      5712,
+      4284
+    ]
+  },
+  {
+    "path": "input/stations/MERCH/IMG_3828.jpeg",
+    "bytes": 2536189,
+    "type": "jpeg",
+    "dimensions": [
+      5712,
+      4284
+    ]
+  },
+  {
+    "path": "input/stations/MERCH/IMG_3836.jpeg",
+    "bytes": 2609632,
+    "type": "jpeg",
+    "dimensions": [
+      5712,
+      4284
+    ]
+  },
+  {
+    "path": "input/breakdown/BREAKDOWNS/IMG_9290.jpeg",
+    "bytes": 298764,
+    "type": "jpeg",
+    "dimensions": [
+      1320,
+      2868
+    ]
+  },
+  {
+    "path": "input/breakdown/BREAKDOWNS/IMG_9286.jpeg",
+    "bytes": 282974,
+    "type": "jpeg",
+    "dimensions": [
+      1320,
+      2868
+    ]
+  },
+  {
+    "path": "input/breakdown/BREAKDOWNS/IMG_9287.jpeg",
+    "bytes": 223479,
+    "type": "jpeg",
+    "dimensions": [
+      1320,
+      2868
+    ]
+  },
+  {
+    "path": "input/breakdown/BREAKDOWNS/IMG_9288.jpeg",
+    "bytes": 414988,
+    "type": "jpeg",
+    "dimensions": [
+      1320,
+      2868
+    ]
+  },
+  {
+    "path": "input/breakdown/BREAKDOWNS/IMG_9284.jpeg",
+    "bytes": 278571,
+    "type": "jpeg",
+    "dimensions": [
+      1320,
+      2868
+    ]
+  },
+  {
+    "path": "input/breakdown/BREAKDOWNS/IMG_9285.jpeg",
+    "bytes": 246372,
+    "type": "jpeg",
+    "dimensions": [
+      1306,
+      2868
+    ]
+  }
+]

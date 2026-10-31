@@ -1,0 +1,290 @@
+{
+  "desktop": {
+    "stations": {
+      "led-camera": {
+        "open": true,
+        "title": "Self Portrait, 2026",
+        "imgs": [
+          {
+            "src": "http://localhost:4173/stations/led-camera-screens/IMG_3852.webp",
+            "ok": true
+          },
+          {
+            "src": "http://localhost:4173/stations/led-camera-screens/IMG_3852.webp",
+            "ok": true
+          }
+        ],
+        "overflow": false,
+        "returnTime": 16.5
+      },
+      "tvs": {
+        "open": true,
+        "title": "Mandala, 2026",
+        "imgs": [
+          {
+            "src": "http://localhost:4173/stations/tvs/IMG_3855.webp",
+            "ok": true
+          },
+          {
+            "src": "http://localhost:4173/stations/tvs/IMG_3855.webp",
+            "ok": true
+          },
+          {
+            "src": "http://localhost:4173/stations/tvs/IMG_3856.webp",
+            "ok": true
+          },
+          {
+            "src": "http://localhost:4173/stations/tvs/IMG_3857.webp",
+            "ok": true
+          }
+        ],
+        "overflow": false,
+        "returnTime": 39.5
+      },
+      "projector": {
+        "open": true,
+        "title": "The Shape of Everything, 2026",
+        "imgs": [
+          {
+            "src": "http://localhost:4173/stations/projector-screens/IMG_3859.webp",
+            "ok": true
+          },
+          {
+            "src": "http://localhost:4173/stations/projector-screens/IMG_3859.webp",
+            "ok": true
+          },
+          {
+            "src": "http://localhost:4173/stations/projector-screens/IMG_3860.webp",
+            "ok": true
+          }
+        ],
+        "overflow": false,
+        "returnTime": 48
+      },
+      "space-screen": {
+        "open": true,
+        "title": "Hermes Journey",
+        "imgs": [
+          {
+            "src": "http://localhost:4173/stations/space-screen/IMG_3842.webp",
+            "ok": true
+          },
+          {
+            "src": "http://localhost:4173/stations/space-screen/IMG_3842.webp",
+            "ok": true
+          },
+          {
+            "src": "http://localhost:4173/stations/space-screen/IMG_3843.webp",
+            "ok": true
+          },
+          {
+            "src": "http://localhost:4173/stations/space-screen/IMG_3844.webp",
+            "ok": true
+          },
+          {
+            "src": "http://localhost:4173/stations/space-screen/IMG_3845.webp",
+            "ok": true
+          }
+        ],
+        "overflow": false,
+        "returnTime": 64.5
+      },
+      "merch": {
+        "open": true,
+        "title": "NOUSCON Merch",
+        "imgs": [
+          {
+            "src": "http://localhost:4173/stations/merch/IMG_3828.webp",
+            "ok": true
+          },
+          {
+            "src": "http://localhost:4173/stations/merch/IMG_3828.webp",
+            "ok": true
+          },
+          {
+            "src": "http://localhost:4173/stations/merch/IMG_3834.webp",
+            "ok": true
+          },
+          {
+            "src": "http://localhost:4173/stations/merch/IMG_3835.webp",
+            "ok": true
+          },
+          {
+            "src": "http://localhost:4173/stations/merch/IMG_3836.webp",
+            "ok": true
+          },
+          {
+            "src": "http://localhost:4173/stations/merch/IMG_3838.webp",
+            "ok": true
+          }
+        ],
+        "overflow": false,
+        "returnTime": 83
+      },
+      "cpu-terminals": {
+        "open": true,
+        "title": "CPU TERMINALS",
+        "imgs": [
+          {
+            "src": "http://localhost:4173/stations/cpu-terminals/IMG_9270.webp",
+            "ok": true
+          },
+          {
+            "src": "http://localhost:4173/stations/cpu-terminals/IMG_9270.webp",
+            "ok": true
+          }
+        ],
+        "overflow": false,
+        "returnTime": 91
+      }
+    },
+    "end": 0,
+    "visibleHotspotsAfterStations": 0,
+    "floor": "http://localhost:4173/media/upstairs.mp4",
+    "errors": []
+  },
+  "mobile": {
+    "stations": {
+      "led-camera": {
+        "open": true,
+        "title": "Self Portrait, 2026",
+        "imgs": [
+          {
+            "src": "http://localhost:4173/stations/led-camera-screens/IMG_3852.webp",
+            "ok": true
+          },
+          {
+            "src": "http://localhost:4173/stations/led-camera-screens/IMG_3852.webp",
+            "ok": true
+          }
+        ],
+        "overflow": false,
+        "returnTime": 16.5
+      },
+      "tvs": {
+        "open": true,
+        "title": "Mandala, 2026",
+        "imgs": [
+          {
+            "src": "http://localhost:4173/stations/tvs/IMG_3855.webp",
+            "ok": true
+          },
+          {
+            "src": "http://localhost:4173/stations/tvs/IMG_3855.webp",
+            "ok": true
+          },
+          {
+            "src": "http://localhost:4173/stations/tvs/IMG_3856.webp",
+            "ok": true
+          },
+          {
+            "src": "http://localhost:4173/stations/tvs/IMG_3857.webp",
+            "ok": true
+          }
+        ],
+        "overflow": false,
+        "returnTime": 39.5
+      },
+      "projector": {
+        "open": true,
+        "title": "The Shape of Everything, 2026",
+        "imgs": [
+          {
+            "src": "http://localhost:4173/stations/projector-screens/IMG_3859.webp",
+            "ok": true
+          },
+          {
+            "src": "http://localhost:4173/stations/projector-screens/IMG_3859.webp",
+            "ok": true
+          },
+          {
+            "src": "http://localhost:4173/stations/projector-screens/IMG_3860.webp",
+            "ok": true
+          }
+        ],
+        "overflow": false,
+        "returnTime": 48
+      },
+      "space-screen": {
+        "open": true,
+        "title": "Hermes Journey",
+        "imgs": [
+          {
+            "src": "http://localhost:4173/stations/space-screen/IMG_3842.webp",
+            "ok": true
+          },
+          {
+            "src": "http://localhost:4173/stations/space-screen/IMG_3842.webp",
+            "ok": true
+          },
+          {
+            "src": "http://localhost:4173/stations/space-screen/IMG_3843.webp",
+            "ok": true
+          },
+          {
+            "src": "http://localhost:4173/stations/space-screen/IMG_3844.webp",
+            "ok": true
+          },
+          {
+            "src": "http://localhost:4173/stations/space-screen/IMG_3845.webp",
+            "ok": true
+          }
+        ],
+        "overflow": false,
+        "returnTime": 64.5
+      },
+      "merch": {
+        "open": true,
+        "title": "NOUSCON Merch",
+        "imgs": [
+          {
+            "src": "http://localhost:4173/stations/merch/IMG_3828.webp",
+            "ok": true
+          },
+          {
+            "src": "http://localhost:4173/stations/merch/IMG_3828.webp",
+            "ok": true
+          },
+          {
+            "src": "http://localhost:4173/stations/merch/IMG_3834.webp",
+            "ok": true
+          },
+          {
+            "src": "http://localhost:4173/stations/merch/IMG_3835.webp",
+            "ok": true
+          },
+          {
+            "src": "http://localhost:4173/stations/merch/IMG_3836.webp",
+            "ok": true
+          },
+          {
+            "src": "http://localhost:4173/stations/merch/IMG_3838.webp",
+            "ok": true
+          }
+        ],
+        "overflow": false,
+        "returnTime": 83
+      },
+      "cpu-terminals": {
+        "open": true,
+        "title": "CPU TERMINALS",
+        "imgs": [
+          {
+            "src": "http://localhost:4173/stations/cpu-terminals/IMG_9270.webp",
+            "ok": true
+          },
+          {
+            "src": "http://localhost:4173/stations/cpu-terminals/IMG_9270.webp",
+            "ok": true
+          }
+        ],
+        "overflow": false,
+        "returnTime": 91
+      }
+    },
+    "end": 0,
+    "visibleHotspotsAfterStations": 0,
+    "floor": "http://localhost:4173/media/upstairs.mp4",
+    "errors": []
+  }
+}

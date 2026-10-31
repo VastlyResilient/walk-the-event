@@ -1,0 +1,5 @@
+{
+  "method": "RGB per-channel comparison, not DeltaE (source and output both HLG)",
+  "mean_absolute_8bit_error": 2.1402492042824073,
+  "p95_absolute_8bit_error": 5.0
+}

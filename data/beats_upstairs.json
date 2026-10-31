@@ -1,0 +1,32 @@
+[
+  {
+    "start": 0,
+    "end": 11,
+    "title": "The ascent",
+    "description": "A grand staircase washed in violet."
+  },
+  {
+    "start": 11,
+    "end": 44,
+    "title": "Light columns",
+    "description": "A long upper gallery, windows and luminous floor fixtures."
+  },
+  {
+    "start": 44,
+    "end": 68,
+    "title": "The quiet passage",
+    "description": "A rhythmic corridor leads into moving colored light."
+  },
+  {
+    "start": 68,
+    "end": 100,
+    "title": "Electric company",
+    "description": "Crowds gather under violet light and colored projections."
+  },
+  {
+    "start": 100,
+    "end": 129.6,
+    "title": "Above it all",
+    "description": "Planters, open rooms and a final view across the floor below."
+  }
+]

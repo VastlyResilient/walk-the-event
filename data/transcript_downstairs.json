@@ -1,0 +1,25 @@
+{
+  "text": " Here we go!",
+  "segments": [
+    {
+      "id": 0,
+      "seek": 6000,
+      "start": 60.0,
+      "end": 62.0,
+      "text": " Here we go!",
+      "tokens": [
+        50364,
+        1692,
+        321,
+        352,
+        0,
+        50464
+      ],
+      "temperature": 0.0,
+      "avg_logprob": -0.8356973784310477,
+      "compression_ratio": 0.5789473684210527,
+      "no_speech_prob": 0.6076857447624207
+    }
+  ],
+  "language": "en"
+}

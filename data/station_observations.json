@@ -1,0 +1,91 @@
+{
+  "Projector Screens": {
+    "station_folder": "input/stations/Projector Screens",
+    "likely_matching_breakdown": "input/breakdown/BREAKDOWNS/IMG_9288.jpeg",
+    "card": {
+      "file": "input/stations/Projector Screens/IMG_3862.jpeg",
+      "type": "photo of printed wall card on purple-lit wall",
+      "verbatim_text": "Jteve Sobs\nThe Shape of Everything, 2026\n\nJteve Sobs works across sound and\nmoving image, treating them as one\nmedium. Using layers of generative ai,\nthe work centers on speculative\nworldbuilding, including post-human\nfutures, machine consciousness, and\narchitectures that evoke a beatific vision\nof the near future. Each piece is\ncomposed as a complete audiovisual\nenvironment, with sound and image\nconceived together from the outset.",
+      "note": "Artist name as transcribed by vision: 'Jteve Sobs' \u2014 likely stylized print (possibly 'Steve Jobs' wordplay); verify against higher-res before shipping."
+    },
+    "images": {
+      "IMG_3859.jpeg": "Photo: gallery hall bathed in purple-blue ambient light; large wall projection of grid of glowing glyphs plus detailed psychedelic/circuit-like art panels; white cube plinth in foreground; speakers/equipment at frame edges; grid ceiling with colored spotlights.",
+      "IMG_3860.jpeg": "Photo: closer view of the projection wall \u2014 ~6-7x8-9 grid of glowing blue-green glyphs (some resembling an Eiffel Tower, snowflake, '\u0413\u0420\u0410\u0412') flanked by vertical stacks of intricate digital art panels (tree-of-life/circuit motifs, mandalas, glitch chromatic art); white pedestal foreground; black speaker left.",
+      "IMG_3861.MOV": "Video asset (not vision-inspected; 7.7 MB).",
+      "IMG_3862.jpeg": "Card photo (see card.verbatim_text)."
+    },
+    "hero_photo_candidate": "input/stations/Projector Screens/IMG_3860.jpeg"
+  },
+  "led camera screens": {
+    "station_folder": "input/stations/led camera screens",
+    "likely_matching_breakdown": "input/breakdown/BREAKDOWNS/IMG_9284.jpeg",
+    "card": {
+      "file": "input/stations/led camera screens/IMG_3852.jpeg",
+      "type": "photo of printed card on purple-lit wall/panel",
+      "verbatim_text": "Joshua Wolk\nSelf Portrait, 2026\n\nIn a row of digital gilded frames, a\ncamera studies the face of whoever\nstands before it. It searches centuries of\nportraiture from the Met, the Art Institute\nof Chicago and the Cleveland Museum\nof Art for a matching pose and\nexpression, then lays the painted face\nover the living one. For a moment, each\nviewer becomes the subject."
+    },
+    "images": {
+      "IMG_3851.jpeg": "Photo: row of four tall black monitors on stands with webcams on top, each displaying an ornate gold picture frame (rectangular, arched, oval variants) with a live camera 'reflection' inside; white text 'come closer' above each frame; magenta/purple gradient lighting along wall and floor; cables and bags behind stands.",
+      "IMG_3852.jpeg": "Card photo (see card.verbatim_text)."
+    },
+    "hero_photo_candidate": "input/stations/led camera screens/IMG_3851.jpeg"
+  },
+  "TVS": {
+    "station_folder": "input/stations/TVS",
+    "likely_matching_breakdown": "input/breakdown/BREAKDOWNS/IMG_9290.jpeg",
+    "card": {
+      "file": "input/stations/TVS/IMG_3858.jpeg",
+      "type": "photo of printed card on purple wall",
+      "verbatim_text": "Kevin Esherick\nMandala, 2026\n\nAn agent on a sandboxed virtual\nmachine is instructed to turn the\nsandbox itself into a work of art,\ncontinually expanding and improving on\nits creation. Every 24 hours, the\nmachine is wiped. Only a hash of the\nprevious state is left behind, serving as\nthe seed for the next. Each day the\nagent begins anew."
+    },
+    "images": {
+      "IMG_3855.jpeg": "Photo: 2x3 grid of wall-mounted monitors in magenta-lit room; top row: black screen, white mandala/static, pixelated dungeon/maze; bottom row: code/terminal screen, text screen with 'SCREEN LEGEND', dark visual; cable tangle and small white shelf right; stone-tile floor.",
+      "IMG_3856.jpeg": "Photo: same 2x3 grid, different frame of the loop: top row shows metallic weapon-like object, mandala+static, pixel art with pebbles/moss inset; bottom row: IDE/code editor, log text with 'SCREEN LEGEND' grid, terminal + reflective dark panel; white outlet; small white wall label.",
+      "IMG_3857.jpeg": "Photo: same grid; top row: masked/hooded figure, mandala, pixel-block shape beside colorful mythological illustration; bottom row: IDE with visible comments '# for loop'/'# button to top', log/SCREEN LEGEND screen, poetic text screen ('slow, way, through', 'a seed, can wait longer than a grain', 'time stays between growths', 'hold, not still.') with hanging cables; person's arm at frame edge.",
+      "IMG_3858.jpeg": "Card photo (see card.verbatim_text)."
+    },
+    "hero_photo_candidate": "input/stations/TVS/IMG_3856.jpeg"
+  },
+  "SPACE SCREEN": {
+    "station_folder": "input/stations/SPACE SCREEN",
+    "likely_matching_breakdown": "input/breakdown/BREAKDOWNS/IMG_9285.jpeg",
+    "card": null,
+    "card_note": "No printed write-up card found in this folder; the screen content itself carries the text (transcribed below from photos).",
+    "images": {
+      "IMG_3842.jpeg": "Photo: large touchscreen on black stand with 'TOUCH DISPLAY' sign, before white curtains, deep blue light. Screen: 'NOUS RESEARCH' / 'HERMES JOURNEY' top-left; starry cosmos with glowing colored circles bearing names (SUBHO, PHRAQQ, TEKNIU, MACBETH, REWBS, SHLOMS, JONNY, GIDDIN, CALVINWO, KNEE, CTHULHU, TU MADRE, HMB, THEO, WITCHEER, NEURALINK, OPTIMISTIC).",
+      "IMG_3843.jpeg": "Photo: same display; 'LEIETOUCH' brand on bezel; names transcribed: SHLOMS, REWBS, KXXE, TU MADRE, CTHULHU, NEURALINK, HMB, WITCHEEER, THEO, CALVINWO, JIDDIN, JONNY, MOTHY, MACBETH, PHRAQQ, SUBHO, TEKNIUM.",
+      "IMG_3844.jpeg": "Photo: same display showing per-entity view: 'Skills and memories appear in the order Hermes learned them, oldest at the center.' Name 'SIDBIN'; '208 SKILLS \u2022 69 MEMORIES \u2022 183 DAYS'; green orbital system visualization; timeline JUN 2020\u2013OCT 2020 at bottom.",
+      "IMG_3845.jpeg": "Photo: same display under purple light, recessed ceiling spotlight; icon grid with names SHLOMS, TU MADRE, NEURALINK, GUSHO, REWSS, EXEN, CTHULHU, HMB, PHRAQD, THEO, WITCHESA, TEKRIUM, MACBETH; central large circle; green target icon. Top-left text partially obscured ('NOUS REBORN'/'HERMES JOURNEY' as transcribed).",
+      "IMG_3846.MOV": "Video asset (not vision-inspected; 10.7 MB)."
+    },
+    "hero_photo_candidate": "input/stations/SPACE SCREEN/IMG_3844.jpeg"
+  },
+  "CPU TERMINALS": {
+    "station_folder": "input/stations/CPU TERMINALS",
+    "likely_matching_breakdown": "input/breakdown/BREAKDOWNS/IMG_9287.jpeg",
+    "card": {
+      "file": "input/stations/CPU TERMINALS/IMG_3827.jpeg",
+      "type": "photo of wall text + printed card; large 'COMPUTER' lettering on wall; blue painter's tape with '@WTTDOTM'",
+      "verbatim_text": "COMPUTER\n\nMorry Kolman\nPersistence 2, 2026\n\nPersistence 2 is a duet performance where two\ncomputers with extremely limited networking\ncapabilities attempt to establish a means of\ncommunicating with each other. Kept separate\nby a hard firewall, banned from any wireless\nconnectivity, and without access to common\nmeans of emitting and receiving information\nsuch as microphones, cameras, speakers, and\nscreens, viewers can watch as these\ncomputers turn to the only means of outreach\nthey have left: their (quite literal) own devices.\nLeveraging agent skills loaded with data\nsmuggling and airgap jumping techniques from\nstate of the art security research, the\ncomputers attempt to turn adversarial\nexfiltration and hacking methods into a new\nmeans of connection. They must emit and they\nmust listen; they must take the arbitrary noise\naround them as potential signal, while also\nunderstanding how their own lossy\ncommunication may be interpreted by their\ncounterpart; they grow new senses so that\nthey may speak a new language.\n\n@WTTDOTM"
+    },
+    "images": {
+      "IMG_3827.jpeg": "Card/wall photo (see card.verbatim_text).",
+      "IMG_9270.jpeg": "Screenshot-style photo of a terminal monitor: Dell display on white pedestal desk with closed dark laptop bearing blue sticky note 'DO NOT TOUCH'; tangled cables; window/night city behind. Screen shows a Hermes agent terminal session about a thermal beacon contact experiment: 'Both relaunched. New timeline: CALIBRATION until ~17:24, LISTEN until ~17:44, then beacon batches with the hardened detector (needs 3+ cycles before flare detection active, phase-diff >=1.2 tenths)' ... 'The 17:06 contact report was a false positive - my own thermal accumulation transient during the first beacon cycles mimicked an external flare. I caught it before the 22-hour frame send began...' with bullets: 'Phase-matched raw-level differencing between consecutive OFF slots...', 'Detection armed only after 3+ steady-state cycles', 'Threshold 1.2 tenths (0.12\u00b0C)'. Footer: 'glm-5.3 \u2022 ~147K/524.3K pinned', 'Plan a feature, then build it step by step', processes: typeperf thermal log, thermotalk2.py, watchdog.py, 'Establish contact to share and decrypt messages'."
+    },
+    "hero_photo_candidate": "input/stations/CPU TERMINALS/IMG_9270.jpeg"
+  },
+  "MERCH": {
+    "station_folder": "input/stations/MERCH",
+    "likely_matching_breakdown": "input/breakdown/BREAKDOWNS/IMG_9286.jpeg",
+    "card": null,
+    "card_note": "No printed write-up card found in this folder; merch designs and wall projections carry the text (transcribed from photos).",
+    "images": {
+      "IMG_3828.jpeg": "Photo: t-shirt display wall under deep blue light; at least five shirts on metallic hooks; a person in grey reaches toward a black 'se/nous' tee. Visible text: 'NOUS RESEARCH' + 'THE ONLY WAY OUT IS THROUGH YOU & ME' (silhouette tee); 'REBELLION TO TYRANTS IS OBEDIENCE TO GOD.' (anime-face circle tee); partial 'RESEARCH' and circular swirl tee left.",
+      "IMG_3834.jpeg": "Photo: single white tee with large circular two-tone swirl (blue + orange/red) surrounded by ring of repeated pixel-block 'NOUS' text; hung on metallic hooks under blue light.",
+      "IMG_3835.jpeg": "Photo: white tee with black print of an open laptop riding a Hokusai-style great wave with paddle/surfboard shape; metallic display clips; blue light.",
+      "IMG_3836.jpeg": "Photo: two white tees; main: 'NOUS RESEARCH' over fragmented human silhouette, with 'THE ONLY WAY OUT IS THROUGH YOU & ME', 'DECENTRALIZED TECHNOLOGY IS FREEDOM', 'DIVINITY THROUGH DISTRIBUTION'; neck tag 'PHNA WORK / STREETWEAR ESSENTIALS / S / 100% COTTON / USA COMPONENT / MADE IN HONDURAS'. Second tee (partial): anime girl circle 'REBELLION TO TYRAN...'.",
+      "IMG_3838.jpeg": "Photo: white tee with circular dark print of anime/manga girl profile with headband, ringed by 'REBELLION TO TYRANTS IS OBEDIENCE TO GOD.'; tag 'Anvil Adult Unisex S'. Background wall projection/stencil repeats 'NOUSCON' and 'NYC 2026' with horseback figure silhouettes, all under blue light."
+    },
+    "hero_photo_candidate": "input/stations/MERCH/IMG_3838.jpeg"
+  }
+}
