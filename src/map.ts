@@ -1,6 +1,7 @@
 
 import { STATIONS, CHAPTERS, FLOORS } from "./data-gen";
 import type { WalkCtx } from "./walk";
+const BASE = import.meta.env.BASE_URL;
 
 // Illustrated route: a stylized serpentine path (vector, not a scan) with pins.
 export function mountMap(root: HTMLElement, ctx: WalkCtx): () => void {
@@ -65,7 +66,7 @@ export function mountMap(root: HTMLElement, ctx: WalkCtx): () => void {
             <circle class="core" cx="300" cy="36" r="5.5" style="fill:#8b5cff"/>
             <text x="288" y="40" text-anchor="end">Upstairs →</text>
           </g>
-          <image class="map-guide" id="mapguide" href="/guide.png" x="188" y="700" width="26" height="40"/>
+          <image class="map-guide" id="mapguide" href="${BASE}guide.png" x="188" y="700" width="26" height="40"/>
         </svg>
       </div>
       <p class="map-sub" style="margin-top:22px">Pins in pink are stations · violet dots are chapters</p>
@@ -89,10 +90,10 @@ export function mountMap(root: HTMLElement, ctx: WalkCtx): () => void {
     p.addEventListener("click", () => {
       const go = p.dataset.go!;
       const [path, hash] = go.split("#");
-      history.pushState(null, "", path + (hash ? `#${hash}` : ""));
+      history.pushState(null, "", BASE.replace(/\/$/, "") + path + (hash ? `#${hash}` : ""));
       // trigger route through popstate-style navigation in main
       dispatchEvent(new PopStateEvent("popstate"));
-      if (hash) history.replaceState(null, "", go);
+      if (hash) history.replaceState(null, "", BASE.replace(/\/$/, "") + go);
     }));
 
   return () => { destroyed = true; cancelAnimationFrame(raf); };

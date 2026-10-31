@@ -12,8 +12,8 @@ export interface Chapter { id: string; title: string; desc: string; t: number; e
 export type Floor = "down" | "up";
 
 export const FLOORS: Record<Floor, { src: string; duration: number; name: string }> = {
-  down: { src: import.meta.env.BASE_URL + "/media/downstairs.mp4", duration: 119.1, name: "Downstairs" },
-  up:   { src: import.meta.env.BASE_URL + "/media/upstairs.mp4",   duration: 129.6, name: "Upstairs" },
+  down: { src: import.meta.env.BASE_URL + "media/downstairs.mp4", duration: 119.1, name: "Downstairs" },
+  up:   { src: import.meta.env.BASE_URL + "media/upstairs.mp4",   duration: 129.6, name: "Upstairs" },
 };
 
 export const STATIONS: Station[] = [
@@ -29,9 +29,9 @@ export const STATIONS: Station[] = [
    "Photographed at NOUSCON NYC 2026."
   ],
   "photos": [
-   import.meta.env.BASE_URL + "/stations/led-camera-screens/IMG_3852.webp"
+   import.meta.env.BASE_URL + "stations/led-camera-screens/IMG_3852.webp"
   ],
-  "hero": import.meta.env.BASE_URL + "/stations/led-camera-screens/IMG_3852.webp",
+  "hero": import.meta.env.BASE_URL + "stations/led-camera-screens/IMG_3852.webp",
   "timestamp": 16.5,
   "visibility": [
    13.5,
@@ -77,11 +77,11 @@ export const STATIONS: Station[] = [
    "Photographed at NOUSCON NYC 2026."
   ],
   "photos": [
-   import.meta.env.BASE_URL + "/stations/tvs/IMG_3855.webp",
-   import.meta.env.BASE_URL + "/stations/tvs/IMG_3856.webp",
-   import.meta.env.BASE_URL + "/stations/tvs/IMG_3857.webp"
+   import.meta.env.BASE_URL + "stations/tvs/IMG_3855.webp",
+   import.meta.env.BASE_URL + "stations/tvs/IMG_3856.webp",
+   import.meta.env.BASE_URL + "stations/tvs/IMG_3857.webp"
   ],
-  "hero": import.meta.env.BASE_URL + "/stations/tvs/IMG_3855.webp",
+  "hero": import.meta.env.BASE_URL + "stations/tvs/IMG_3855.webp",
   "timestamp": 39.5,
   "visibility": [
    36.5,
@@ -127,10 +127,10 @@ export const STATIONS: Station[] = [
    "Photographed at NOUSCON NYC 2026."
   ],
   "photos": [
-   import.meta.env.BASE_URL + "/stations/projector-screens/IMG_3859.webp",
-   import.meta.env.BASE_URL + "/stations/projector-screens/IMG_3860.webp"
+   import.meta.env.BASE_URL + "stations/projector-screens/IMG_3859.webp",
+   import.meta.env.BASE_URL + "stations/projector-screens/IMG_3860.webp"
   ],
-  "hero": import.meta.env.BASE_URL + "/stations/projector-screens/IMG_3859.webp",
+  "hero": import.meta.env.BASE_URL + "stations/projector-screens/IMG_3859.webp",
   "timestamp": 48,
   "visibility": [
    45,
@@ -176,12 +176,12 @@ export const STATIONS: Station[] = [
    "Photographed at NOUSCON NYC 2026."
   ],
   "photos": [
-   import.meta.env.BASE_URL + "/stations/space-screen/IMG_3842.webp",
-   import.meta.env.BASE_URL + "/stations/space-screen/IMG_3843.webp",
-   import.meta.env.BASE_URL + "/stations/space-screen/IMG_3844.webp",
-   import.meta.env.BASE_URL + "/stations/space-screen/IMG_3845.webp"
+   import.meta.env.BASE_URL + "stations/space-screen/IMG_3842.webp",
+   import.meta.env.BASE_URL + "stations/space-screen/IMG_3843.webp",
+   import.meta.env.BASE_URL + "stations/space-screen/IMG_3844.webp",
+   import.meta.env.BASE_URL + "stations/space-screen/IMG_3845.webp"
   ],
-  "hero": import.meta.env.BASE_URL + "/stations/space-screen/IMG_3842.webp",
+  "hero": import.meta.env.BASE_URL + "stations/space-screen/IMG_3842.webp",
   "timestamp": 64.5,
   "visibility": [
    61.5,
@@ -227,13 +227,13 @@ export const STATIONS: Station[] = [
    "Photographed at NOUSCON NYC 2026."
   ],
   "photos": [
-   import.meta.env.BASE_URL + "/stations/merch/IMG_3828.webp",
-   import.meta.env.BASE_URL + "/stations/merch/IMG_3834.webp",
-   import.meta.env.BASE_URL + "/stations/merch/IMG_3835.webp",
-   import.meta.env.BASE_URL + "/stations/merch/IMG_3836.webp",
-   import.meta.env.BASE_URL + "/stations/merch/IMG_3838.webp"
+   import.meta.env.BASE_URL + "stations/merch/IMG_3828.webp",
+   import.meta.env.BASE_URL + "stations/merch/IMG_3834.webp",
+   import.meta.env.BASE_URL + "stations/merch/IMG_3835.webp",
+   import.meta.env.BASE_URL + "stations/merch/IMG_3836.webp",
+   import.meta.env.BASE_URL + "stations/merch/IMG_3838.webp"
   ],
-  "hero": import.meta.env.BASE_URL + "/stations/merch/IMG_3828.webp",
+  "hero": import.meta.env.BASE_URL + "stations/merch/IMG_3828.webp",
   "timestamp": 83,
   "visibility": [
    80,
@@ -279,9 +279,9 @@ export const STATIONS: Station[] = [
    "Photographed at NOUSCON NYC 2026."
   ],
   "photos": [
-   import.meta.env.BASE_URL + "/stations/cpu-terminals/IMG_9270.webp"
+   import.meta.env.BASE_URL + "stations/cpu-terminals/IMG_9270.webp"
   ],
-  "hero": import.meta.env.BASE_URL + "/stations/cpu-terminals/IMG_9270.webp",
+  "hero": import.meta.env.BASE_URL + "stations/cpu-terminals/IMG_9270.webp",
   "timestamp": 91,
   "visibility": [
    88,

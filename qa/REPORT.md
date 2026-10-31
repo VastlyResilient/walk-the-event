@@ -1,0 +1,2 @@
+# QA report
+See interaction-report.json for six stations on desktop/mobile; live-report.json for live public checks. Color source/encoded visual comparison is in color/. The latest live run passed all station names, image loads, map title, six gallery cards, real video duration/readiness, and zero JS errors. Known scope gaps are in docs/HANDOFF.md; no blanket master-prompt gate signoff is claimed.

@@ -224,7 +224,8 @@ function route() {
   closeOverlay(); overlayReturn = null; ovBody.innerHTML = "";
   unmount?.(); unmount = null; reopenWalk = null;
   closeOverlay(); closeDrawers();
-  const path = location.pathname.endsWith("/map") ? "/map" : location.pathname.endsWith("/stations") ? "/stations" : "/";
+  const cleanPath = location.pathname.replace(/\/+$/, "");
+  const path = cleanPath.endsWith("/map") ? "/map" : cleanPath.endsWith("/stations") ? "/stations" : "/";
   document.querySelectorAll(".nav a[data-route]").forEach(a =>
     a.classList.toggle("active", (a as HTMLElement).dataset.route === path));
   guideEl.style.display = path === "/stations" ? "none" : "block";
@@ -233,7 +234,6 @@ function route() {
   else unmount = mountWalk(view, ctx);
 }
 addEventListener("popstate", route);
-addEventListener("hashchange", route);
 document.addEventListener("click", e => {
   const a = (e.target as HTMLElement).closest("a[data-nav]");
   if (a) { e.preventDefault(); navigate(a.getAttribute("href")!); }

@@ -1,5 +1,6 @@
 
 import { STATIONS } from "./data-gen";
+const BASE = import.meta.env.BASE_URL;
 import { LINES } from "./guide";
 import type { WalkCtx } from "./walk";
 
@@ -28,7 +29,7 @@ export function mountGallery(root: HTMLElement, ctx: WalkCtx): () => void {
     </div>`;
   root.querySelectorAll<HTMLButtonElement>("[data-open]").forEach(b =>
     b.addEventListener("click", () => {
-      history.pushState(null, "", `/#station-${b.dataset.open}`);
+      history.pushState(null, "", `${BASE}#station-${b.dataset.open}`);
       dispatchEvent(new PopStateEvent("popstate"));
     }));
   root.querySelectorAll<HTMLButtonElement>("[data-view]").forEach(b =>

@@ -289,21 +289,32 @@ export function mountWalk(root: HTMLElement, ctx: WalkCtx): () => void {
   state.raf = requestAnimationFrame(loop);
   buildRail();
 
-  // ---- deep links ----
+  // ---- deep links: also handle hash-only changes on the same document ----
   let deepLinkTimer = 0;
-  const hash = location.hash;
-  if (hash.startsWith("#station-")) {
-    const st = STATIONS.find(s => s.id === hash.slice(9));
-    if (st) { seekTo(st.timestamp); deepLinkTimer = setTimeout(() => { if (!state.destroyed) ctx.openStation(st, st.timestamp); }, 900); }
-  } else if (hash === "#floor-up") setFloor("up");
-  else if (hash.startsWith("#chapter-")) {
-    const c = CHAPTERS.find(c => c.id === hash.slice(9));
-    if (c) { if (c.floor !== state.floor) setFloor(c.floor, c.t); else seekTo(c.t); }
+  function applyHash() {
+    clearTimeout(deepLinkTimer);
+    removeEventListener("hashchange", applyHash);
+    const hash = location.hash;
+    if (hash.startsWith("#station-")) {
+      const st = STATIONS.find(s => s.id === hash.slice(9));
+      if (st) {
+        if (state.floor !== "down") setFloor("down", st.timestamp); else seekTo(st.timestamp);
+        deepLinkTimer = window.setTimeout(() => { if (!state.destroyed) ctx.openStation(st, st.timestamp); }, 900);
+      }
+    } else if (hash === "#floor-up") setFloor("up");
+    else if (hash === "#floor-down") setFloor("down");
+    else if (hash.startsWith("#chapter-")) {
+      const c = CHAPTERS.find(c => c.id === hash.slice(9));
+      if (c) { if (c.floor !== state.floor) setFloor(c.floor, c.t); else seekTo(c.t); }
+    }
   }
+  applyHash();
+  addEventListener("hashchange", applyHash);
 
   return () => {
     state.destroyed = true;
     clearTimeout(deepLinkTimer);
+    removeEventListener("hashchange", applyHash);
     cancelAnimationFrame(state.raf);
     stage.removeEventListener("wheel", onWheel);
     removeEventListener("keydown", onKey);

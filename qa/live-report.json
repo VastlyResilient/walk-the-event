@@ -1,0 +1,44 @@
+{
+  "led-camera": {
+    "title": "Self Portrait, 2026",
+    "imgs": true,
+    "overflow": false
+  },
+  "tvs": {
+    "title": "Mandala, 2026",
+    "imgs": true,
+    "overflow": false
+  },
+  "projector": {
+    "title": "The Shape of Everything, 2026",
+    "imgs": true,
+    "overflow": false
+  },
+  "space-screen": {
+    "title": "Hermes Journey",
+    "imgs": true,
+    "overflow": false
+  },
+  "merch": {
+    "title": "NOUSCON Merch",
+    "imgs": true,
+    "overflow": false
+  },
+  "cpu-terminals": {
+    "title": "CPU TERMINALS",
+    "imgs": true,
+    "overflow": false
+  },
+  "map": {
+    "title": "The Route"
+  },
+  "gallery": {
+    "cards": 6
+  },
+  "video": {
+    "src": "https://vastlyresilient.github.io/walk-the-event/media/downstairs.mp4",
+    "duration": 119.2,
+    "ready": 4
+  },
+  "errors": []
+}
