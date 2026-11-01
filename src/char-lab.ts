@@ -23,18 +23,29 @@ const root = dbg.root;
 
 const VIEWS: Record<string, [number, number, number, number]> = {
   // [cameraX, cameraY, cameraZ, fov]
-  front: [0.0, 1.16, 3.55, 30],
-  "three-quarter": [1.55, 1.24, 3.05, 32],
-  side: [3.30, 1.12, 0.35, 30],
-  back: [-0.55, 1.22, -3.40, 30],
-  bust: [0.95, 1.62, 1.55, 26],
-  head: [0.30, 1.66, 0.95, 24],
+  front: [0.0, 1.02, 4.55, 26],
+  "three-quarter": [1.85, 1.08, 3.85, 26],
+  side: [4.45, 1.00, 0.30, 26],
+  back: [-0.60, 1.08, -4.20, 26],
+  bust: [0.95, 1.55, 2.05, 26],
+  head: [0.30, 1.62, 1.05, 24],
+  face: [0.12, 1.60, 0.66, 18],
+  choker: [0.10, 1.50, 0.80, 20],
 };
 const v = VIEWS[view] || VIEWS["three-quarter"];
-cam.fov = v[3];
-cam.position.set(v[0], v[1], v[2]);
-cam.lookAt(0, view === "head" ? 1.60 : view === "bust" ? 1.45 : 0.90, 0);
-cam.updateProjectionMatrix();
+const ty = view === "face" ? 1.60 : view === "choker" ? 1.50 : view === "head" ? 1.62 : view === "bust" ? 1.48 : 0.88;
+
+function applyView() {
+  cam.fov = v[3];
+  cam.position.set(v[0], v[1], v[2]);
+  cam.lookAt(0, ty, 0);
+  cam.updateProjectionMatrix();
+}
+applyView();
+// the mount's ResizeObserver lands a frame later and would re-fit the lens; re-assert the framing
+requestAnimationFrame(applyView);
+setTimeout(applyView, 120);
+setTimeout(applyView, 420);
 
 if (spin) {
   let a = 0;

@@ -5,7 +5,7 @@ import { mountMap } from "./map";
 import { mountGallery } from "./gallery";
 import type { Station } from "./data-gen";
 import { LINES, PERSONALITIES, askHermes, type Personality } from "./guide";
-import { mountCharacter, type CharacterRig } from "./character";
+import { mountCharacter, type CharacterRig } from "./character3d";
 
 const BASE = import.meta.env.BASE_URL;
 const app = document.getElementById("app")!;

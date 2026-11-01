@@ -1,8 +1,9 @@
 
 import { STATIONS, CHAPTERS, FLOORS, type Floor, type Station, type Chapter } from "./data-gen";
 import { LINES, type Personality } from "./guide";
-import type { CharacterRig } from "./character";
+import type { CharacterRig } from "./character3d";
 import { stationShape } from "./stationshapes";
+import { CROWD_PATH } from "./crowdpath";
 
 export interface WalkCtx {
   openStation(st: Station, returnTime: number): void;
@@ -92,23 +93,46 @@ export function mountWalk(root: HTMLElement, ctx: WalkCtx): () => void {
     } catch { /* same-origin video; ignore transient taint */ }
   }
 
+  function crowdAt(floor: Floor, t: number): [number, number, number] {
+    const a = CROWD_PATH[floor];
+    if (t <= a[0][0]) return a[0];
+    if (t >= a[a.length - 1][0]) return a[a.length - 1];
+    let lo = 0, hi = a.length - 1;
+    while (hi - lo > 1) { const m = (lo + hi) >> 1; if (a[m][0] <= t) lo = m; else hi = m; }
+    const f = (t - a[lo][0]) / Math.max(.001, a[hi][0] - a[lo][0]);
+    return [a[lo][0] + (a[hi][0] - a[lo][0]) * f, a[lo][1] + (a[hi][1] - a[lo][1]) * f, a[lo][2] + (a[hi][2] - a[lo][2]) * f];
+  }
+
+  // She walks the clear floor lane, yielding around foreground attendees rather
+  // than passing through them. x/y come from offline person detection on the
+  // blurred masters; the on-screen motion is critically damped so she steps
+  // around people instead of snapping between positions.
   function placeGuide(r: {x:number;y:number;w:number;h:number}) {
     if (!guideEl) return;
     const landscape = vframe.classList.contains("landscape");
-    const gw = Math.max(104, Math.min(198, r.h * (landscape ? .205 : .31)));
+    const gw = Math.max(104, Math.min(landscape ? 190 : 202, r.h * (landscape ? .235 : .32), r.w * (landscape ? .34 : .44)));
     const gh = gw * 1.92;
-    const floorY = r.y + r.h * (landscape ? .885 : .935);
+    const [, px, py] = crowdAt(state.floor, state.cur);
+    const floorY = r.y + r.h * py;
+    const want = r.x + r.w * px - gw / 2;
+    const minX = r.x + r.w * .006, maxX = r.x + r.w - gw - r.w * .006;
+    if (!state.guideInit) { state.guideX = Math.max(minX, Math.min(maxX, want)); state.guideInit = true; }
+    else state.guideX += (Math.max(minX, Math.min(maxX, want)) - state.guideX) * (ctx.reducedMotion() ? 1 : .115);
+    state.guideVX = state.guideVX * .82 + ((state.guideX - state.lastGuideX) / Math.max(1, r.w)) * .18;
+    state.lastGuideX = state.guideX;
     guideEl.style.position = "fixed";
-    guideEl.style.left = `${Math.max(4, r.x + r.w * (landscape ? .085 : .04))}px`;
+    guideEl.style.left = `${state.guideX}px`;
     guideEl.style.top = `${floorY - gh}px`;
     guideEl.style.bottom = "auto";
     guideEl.style.width = `${gw}px`;
     guideEl.style.height = `${gh}px`;
+    ctx.char.setFacing(Math.max(-1, Math.min(1, state.guideVX * 260)));
   }
 
   const state = {
     floor: "down" as Floor,
     target: 0, cur: 0, panX: 0, panY: 0, panTX: 0, panTY: 0,
+    guideX: 0, lastGuideX: 0, guideVX: 0, guideInit: false,
     chapter: "" as string, lastMove: performance.now(), moved: false,
     stationTeaser: "" as string, raf: 0, destroyed: false, idleFired: false,
   };
@@ -201,6 +225,7 @@ export function mountWalk(root: HTMLElement, ctx: WalkCtx): () => void {
   function setFloor(f: Floor, t = 0) {
     if (f === state.floor && t === 0) return;
     state.floor = f;
+    state.guideInit = false;
     video.src = FLOORS[f].src;
     video.load();
     state.cur = state.target = t;
@@ -336,7 +361,7 @@ export function mountWalk(root: HTMLElement, ctx: WalkCtx): () => void {
     }
     // grounded character: walks with the scroll, stands on the venue floor
     placeGuide(r);
-    ctx.char.setMoving(Math.min(1, Math.abs(diff) * 2.6));
+    ctx.char.setMoving(Math.min(1, Math.abs(diff) * 2.6 + Math.abs(state.guideVX) * 26));
     sampleVenueLight(performance.now());
 
     // outro at very end of upstairs

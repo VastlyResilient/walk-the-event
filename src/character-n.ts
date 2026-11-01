@@ -157,7 +157,7 @@ export function mountCharacter(host: HTMLElement): CharacterRig {
   root.add(hips);
   hips.position.y = 0.845;
 
-  const pelvis = outlined(new THREE.Mesh(new THREE.SphereGeometry(0.138, 24, 18), ink));
+  const pelvis = outlined(new THREE.Mesh(new THREE.SphereGeometry(0.126, 24, 18), ink));
   pelvis.scale.set(1, 0.62, 0.82);
   pelvis.position.y = -0.004;
   hips.add(pelvis);
@@ -174,57 +174,42 @@ export function mountCharacter(host: HTMLElement): CharacterRig {
   torso.add(chest);
 
   // white piping along the off-shoulder neckline (the sheet's keyline)
-  const neckline = new THREE.Mesh(new THREE.TorusGeometry(0.101, 0.0062, 8, 40), white);
+  const neckline = new THREE.Mesh(new THREE.TorusGeometry(0.094, 0.0036, 8, 44), white);
   neckline.rotation.x = Math.PI / 2;
-  neckline.position.set(0, 0.494, 0);
+  neckline.position.set(0, 0.499, 0);
   neckline.scale.z = 0.74;
   torso.add(neckline);
-  // hem piping
-  const hem = new THREE.Mesh(new THREE.TorusGeometry(0.108, 0.0055, 8, 40), white);
-  hem.rotation.x = Math.PI / 2;
-  hem.position.set(0, 0.026, 0);
-  hem.scale.z = 0.74;
-  torso.add(hem);
-
   /* ---------- neck + the "N" choker ---------- */
-  const neck = new THREE.Mesh(new THREE.CylinderGeometry(0.045, 0.054, 0.150, 24), skin);
-  neck.position.y = 0.596;
+  const neck = new THREE.Mesh(new THREE.CylinderGeometry(0.045, 0.054, 0.180, 24), skin);
+  neck.position.y = 0.585;
   torso.add(neck);
 
-  const choker = new THREE.Mesh(new THREE.CylinderGeometry(0.0495, 0.0495, 0.040, 40, 1, true), white);
-  choker.position.y = 0.612;
-  choker.scale.z = 0.94;
+  const choker = new THREE.Mesh(new THREE.CylinderGeometry(0.0505, 0.0505, 0.038, 44, 1, true), white);
+  choker.position.y = 0.590;
+  choker.scale.z = 0.95;
   torso.add(choker);
-  const chokerEdgeTop = new THREE.Mesh(new THREE.TorusGeometry(0.0495, 0.0022, 6, 40), new THREE.MeshBasicMaterial({ color: 0x17131b }));
-  chokerEdgeTop.rotation.x = Math.PI / 2;
-  chokerEdgeTop.position.y = 0.632;
-  chokerEdgeTop.scale.z = 0.94;
-  torso.add(chokerEdgeTop);
-  const chokerEdgeBot = chokerEdgeTop.clone();
-  chokerEdgeBot.position.y = 0.592;
-  torso.add(chokerEdgeBot);
 
   // bold sans "N", built from two stems and a diagonal so it stays crisp at any size
   const nGroup = new THREE.Group();
-  nGroup.position.set(0, 0.612, 0.050);
+  nGroup.position.set(0, 0.590, 0.0545);
   torso.add(nGroup);
   {
-    const gly = new THREE.MeshToonMaterial({ color: 0x0b090e, gradientMap: BAND });
-    const stemGeo = new THREE.BoxGeometry(0.0062, 0.0245, 0.0035);
-    for (const sx of [-0.0072, 0.0072]) {
+    const gly = new THREE.MeshToonMaterial({ color: 0x0a080c, gradientMap: BAND });
+    const stemGeo = new THREE.BoxGeometry(0.0060, 0.0270, 0.0040);
+    for (const sx of [-0.0084, 0.0084]) {
       const stem = new THREE.Mesh(stemGeo, gly);
       stem.position.x = sx;
       nGroup.add(stem);
     }
-    const diag = new THREE.Mesh(new THREE.BoxGeometry(0.0052, 0.0295, 0.0035), gly);
-    diag.rotation.z = -0.46;
-    diag.position.set(0, 0.0005, 0.0006);
+    const diag = new THREE.Mesh(new THREE.BoxGeometry(0.0056, 0.0330, 0.0040), gly);
+    diag.rotation.z = 0.50;
+    diag.position.set(0, 0.0006, 0.0007);
     nGroup.add(diag);
   }
 
   /* ---------- head ---------- */
   const head = new THREE.Group();
-  head.position.y = 0.716;
+  head.position.y = 0.756;
   torso.add(head);
 
   const skullGeo = new THREE.SphereGeometry(0.126, 48, 40);
@@ -276,15 +261,6 @@ export function mountCharacter(host: HTMLElement): CharacterRig {
   fringe.scale.set(1.01, 1.02, 1.03);
   fringe.position.set(0, 0.002, 0.003);
   head.add(fringe);
-  for (let i = 0; i < 13; i++) {
-    const a = (i / 12 - 0.5) * 1.96;            // across the front, +-56 degrees
-    const tip = new THREE.Mesh(new THREE.ConeGeometry(0.0125, 0.030 + (i % 2) * 0.007, 8), hair);
-    tip.rotation.x = Math.PI;
-    tip.position.set(Math.sin(a) * 0.122, 0.052 - Math.abs(a) * 0.004, Math.cos(a) * 0.122);
-    tip.rotation.z = -a * 0.16;
-    head.add(tip);
-  }
-
   // face-framing strands falling past the jaw
   for (const s of [-1, 1]) {
     const side = outlined(roundedBox(0.046, 0.235, 0.062, 0.020, hair));
@@ -365,12 +341,12 @@ export function mountCharacter(host: HTMLElement): CharacterRig {
     eye.scale.set(1.02, 1.18, 0.34);
     eg.add(eye);
     // iris
-    const iris = new THREE.Mesh(new THREE.SphereGeometry(0.0155, 18, 14), new THREE.MeshBasicMaterial({ color: 0x141017 }));
+    const iris = new THREE.Mesh(new THREE.SphereGeometry(0.0175, 18, 14), new THREE.MeshBasicMaterial({ color: 0x141017 }));
     iris.scale.set(0.92, 1.12, 0.30);
     iris.position.set(s * 0.0012, -0.0015, 0.0085);
     eg.add(iris);
     // pupil
-    const pupil = new THREE.Mesh(new THREE.SphereGeometry(0.0075, 12, 10), new THREE.MeshBasicMaterial({ color: 0x050407 }));
+    const pupil = new THREE.Mesh(new THREE.SphereGeometry(0.0088, 12, 10), new THREE.MeshBasicMaterial({ color: 0x050407 }));
     pupil.scale.set(0.95, 1.15, 0.3);
     pupil.position.set(s * 0.0012, -0.0015, 0.0125);
     eg.add(pupil);
@@ -390,10 +366,10 @@ export function mountCharacter(host: HTMLElement): CharacterRig {
     lid.position.z = 0.011;
     eg.add(lid);
     // lashes at the outer corner
-    for (let k = 0; k < 3; k++) {
-      const l = new THREE.Mesh(new THREE.ConeGeometry(0.0022, 0.017, 6), new THREE.MeshBasicMaterial({ color: 0x0a080d }));
-      l.position.set(s * (0.0295 + k * 0.002), 0.0125 - k * 0.0075, 0.0115);
-      l.rotation.z = s * (-0.9 - k * 0.22);
+    for (let k = 0; k < 2; k++) {
+      const l = new THREE.Mesh(new THREE.ConeGeometry(0.0024, 0.019, 6), new THREE.MeshBasicMaterial({ color: 0x0a080d }));
+      l.position.set(s * (0.0300 + k * 0.0030), 0.0135 - k * 0.0085, 0.0150);
+      l.rotation.z = s * (-0.85 - k * 0.26);
       eg.add(l);
     }
     eyes.push(eg);
@@ -439,24 +415,20 @@ export function mountCharacter(host: HTMLElement): CharacterRig {
     const upper = new THREE.Group();
     shoulder.add(upper);
     // short cap sleeve carrying the top's white edge
-    const capSleeve = new THREE.Mesh(new THREE.SphereGeometry(0.053, 20, 14, 0, Math.PI * 2, 0, Math.PI * 0.46), ink);
-    capSleeve.position.y = 0.006;
-    capSleeve.scale.set(1.02, 0.92, 0.96);
+    const capSleeve = new THREE.Mesh(new THREE.SphereGeometry(0.0545, 22, 16, 0, Math.PI * 2, 0, Math.PI * 0.44), ink);
+    capSleeve.position.y = 0.004;
+    capSleeve.scale.set(1.03, 0.95, 0.97);
     upper.add(capSleeve);
-    const cuffEdge = new THREE.Mesh(new THREE.TorusGeometry(0.0505, 0.0032, 6, 24), white);
-    cuffEdge.rotation.x = Math.PI / 2;
-    cuffEdge.position.y = -0.020;
-    upper.add(cuffEdge);
-    const ua = outlined(new THREE.Mesh(new THREE.CapsuleGeometry(0.0295, 0.128, 8, 16), skin));
-    ua.position.y = -0.112;
+    const ua = new THREE.Mesh(new THREE.CapsuleGeometry(0.0315, 0.150, 8, 16), skin);
+    ua.position.y = -0.104;
     upper.add(ua);
     const fore = new THREE.Group();
     fore.position.y = -0.222;
     upper.add(fore);
     const elbow = new THREE.Mesh(new THREE.SphereGeometry(0.0295, 14, 12), skin);
     fore.add(elbow);
-    const fa = outlined(new THREE.Mesh(new THREE.CapsuleGeometry(0.0265, 0.150, 8, 16), skin));
-    fa.position.y = -0.090;
+    const fa = new THREE.Mesh(new THREE.CapsuleGeometry(0.0275, 0.168, 8, 16), skin);
+    fa.position.y = -0.082;
     fore.add(fa);
     const hand = new THREE.Group();
     hand.position.y = -0.182;
@@ -486,26 +458,26 @@ export function mountCharacter(host: HTMLElement): CharacterRig {
     const hipJ = new THREE.Group();
     hipJ.position.set(s * 0.064, -0.018, 0);
     hips.add(hipJ);
-    const thigh = outlined(new THREE.Mesh(new THREE.CapsuleGeometry(0.052, 0.330, 8, 16), ink));
-    thigh.position.y = -0.192;
+    const thigh = new THREE.Mesh(new THREE.CapsuleGeometry(0.0545, 0.360, 8, 16), ink);
+    thigh.position.y = -0.186;
     hipJ.add(thigh);
     const knee = new THREE.Group();
     knee.position.y = -0.368;
     hipJ.add(knee);
-    const calf = outlined(new THREE.Mesh(new THREE.CapsuleGeometry(0.0355, 0.342, 10, 18), ink));
-    calf.position.y = -0.196;
+    const calf = new THREE.Mesh(new THREE.CapsuleGeometry(0.0375, 0.372, 10, 18), ink);
+    calf.position.y = -0.188;
     knee.add(calf);
     // boot
     const boot = outlined(new THREE.Mesh(new THREE.BoxGeometry(0.070, 0.098, 0.115), lacquer));
-    boot.position.set(0, -0.392, 0.012);
+    boot.position.set(0, -0.410, 0.012);
     knee.add(boot);
     const toe = outlined(new THREE.Mesh(new THREE.SphereGeometry(0.036, 14, 10), lacquer));
     toe.scale.set(0.95, 0.62, 1.34);
-    toe.position.set(0, -0.432, 0.088);
+    toe.position.set(0, -0.450, 0.088);
     knee.add(toe);
-    const sole = new THREE.Mesh(new THREE.BoxGeometry(0.074, 0.008, 0.20), white);
-    sole.position.set(0, -0.442, 0.050);
-    knee.add(sole);
+    const welt = new THREE.Mesh(new THREE.BoxGeometry(0.070, 0.0045, 0.185), white);
+    welt.position.set(0, -0.4515, 0.048);
+    knee.add(welt);
     legs[side] = { hip: hipJ, knee };
   }
 
@@ -587,7 +559,7 @@ export function mountCharacter(host: HTMLElement): CharacterRig {
     // cups bounce a touch with the step
     for (let i = 0; i < cups.length; i++) cups[i].rotation.z = (i === 0 ? -1 : 1) * (Math.PI / 2) + Math.sin(phase + i) * 0.03 * moving;
 
-    root.position.y = Math.abs(Math.sin(phase)) * 0.016 * moving + Math.sin(now * 0.0011) * 0.003;
+    root.position.y = Math.abs(Math.sin(phase)) * 0.016 * moving + Math.sin(now * 0.0011) * 0.0015;
 
     const bp = (now * 0.001 + 2.1) % 5.6;
     const closed = bp < 0.12 ? 1 - Math.abs(bp - 0.06) / 0.06 : 0;
